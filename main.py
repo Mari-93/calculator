@@ -22,4 +22,3 @@ while True:
         print(result)
     else:
         print("choose only from the option")
-

@@ -4,43 +4,50 @@ from math import pow, sqrt, pi
 
 
 def get_one_input_as_int():
-    a=int(input("A: ")) 
+    a = int(input("A: "))
     return a
 
 
 def get_two_inputs_as_int():
-    a=int(input("A: ")) 
-    b=int(input("B: "))
+    a = int(input("A: "))
+    b = int(input("B: "))
     return a, b
 
 
-def add(): 
+def add():
     a, b = get_two_inputs_as_int()
     return a+b
+
 
 def sub():
     a, b = get_two_inputs_as_int()
     return a-b
 
+
 def multiply():
     a, b = get_two_inputs_as_int()
     return a*b
+
 
 def divide():
     a, b = get_two_inputs_as_int()
     return a/b
 
+
 def power():
     a, b = get_two_inputs_as_int()
-    return pow(a,b)
+    return pow(a, b)
+
 
 def square():
     a = get_one_input_as_int()
     return sqrt(a)
 
+
 def circle():
     r = get_one_input_as_int()
     return pi*(r**2)
+
 
 add.__name__ = 'Addition'
 sub.__name__ = 'Sub'
