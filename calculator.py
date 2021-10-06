@@ -1,93 +1,62 @@
-#############
-# This script is created for calculator operations
-# Author:
-# Created at:
-# Last modified at:
-###############
 
 
 from math import pow, sqrt, pi
 
-def add(a,b): # Format
+
+def get_one_input_as_int():
+    a=int(input("A: ")) 
+    return a
+
+
+def get_two_inputs_as_int():
+    a=int(input("A: ")) 
+    b=int(input("B: "))
+    return a, b
+
+
+def add(): 
+    a, b = get_two_inputs_as_int()
     return a+b
 
-def sub(a,b): # always add function document.
+def sub():
+    a, b = get_two_inputs_as_int()
     return a-b
 
-def multiply(a,b):
+def multiply():
+    a, b = get_two_inputs_as_int()
     return a*b
 
-def divide(a,b):
+def divide():
+    a, b = get_two_inputs_as_int()
     return a/b
 
-def power(a,b):
+def power():
+    a, b = get_two_inputs_as_int()
     return pow(a,b)
 
-def square(a):
+def square():
+    a = get_one_input_as_int()
     return sqrt(a)
 
-def circle(r):
+def circle():
+    r = get_one_input_as_int()
     return pi*(r**2)
 
-
-print("choose any operation from the below list:") # Why there are 2 print statement, You can achieve the same in one print statemnt itself.
-print(''' 1. Add
-2. Sub
-3. Multiply
-4. Divide
-5. Find the power of
-6. Find the square root of
-7. Find the Area of a circle''')
-while True:
-    n = int(input("Enter a choice: "))
-
-    if n==1:
-        print("Enter two numbers")
-        a=int(input("A: ")) # Getting input is repeated, could you create a function for getting input from user. 
-        b=int(input("B: "))
-        print(add(a,b))
-        break
-
-    elif n==2:
-        print("Enter two numbers")
-        a=int(input("A: "))
-        b=int(input("B: "))
-        print(sub(a,b))
-        break
-
-    elif n==3:
-        print("Enter two numbers")
-        a=int(input("A: "))
-        b=int(input("B: "))
-        print(multiply(a,b))
-        break
-
-    elif n==4:
-        print("Enter two numbers")
-        a=int(input("A: "))
-        b=int(input("B: "))
-        print(divide(a,b))
-        break
-
-    elif n==5:
-        a=int(input("Enter a number: "))
-        b=int(input("Choose the power to find: "))
-        print(int(power(a,b)))
-        break
-
-    elif n==6:
-        a=int(input("Enter the number to find the square root : "))
-        print(square(a))
-        break
-
-    elif n==7:
-        a=int(input("Enter the radius: "))
-        print(circle(a))
-        break
-
-    else:
-        print("choose only from the option")
+add.__name__ = 'Addition'
+sub.__name__ = 'Sub'
+multiply.__name__ = 'Multiply'
+divide.__name__ = 'D'
+power.__name__ = 'P'
+square.__name__ = 'S'
+circle.__name__ = 'C'
 
 
-
-# There are lot of things to change in calculator program. But some of them are advanced concepts. We will learn step by step. 
+calc_operation = {
+    1: add,
+    2: sub,
+    3: multiply,
+    4: divide,
+    5: power,
+    6: square,
+    7: circle
+}
